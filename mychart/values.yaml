@@ -1,0 +1,7 @@
+# Default values for mychart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+webapp:
+  image: mugdha21/webapp
+  name: webapp-deployment

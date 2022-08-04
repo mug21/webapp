@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.webapp.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.webapp.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.webapp.name }}
+    spec:
+      containers:
+      - name: webapp
+        image: {{ .Values.webapp.image }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9000
